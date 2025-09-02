@@ -35,7 +35,7 @@ export default function Home() {
       const expressTime = 60 * 60 * 24 * 30 * 1000 // 30 dias
       const cookieStore = await cookies()
 
-      cookieStore.set("sesseion", response.data.token, {
+      cookieStore.set("session", response.data.token, {
         maxAge: expressTime,
         path: "/",
         httpOnly: false,
