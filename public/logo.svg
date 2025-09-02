@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW (Versão OEM) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="98.3438mm" height="17.474mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 9834.38 1747.4"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="728" font-variant="normal" style="fill-rule:nonzero" font-weight="700">
+	<font-face 
+		font-family="Outfit">
+		<font-face-src>
+			<font-face-name name="Outfit Bold"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="D" horiz-adv-x="753" d="M67.9992 0l285.003 0c211,0 368.999,147 368.999,353.002 0,207.997 -159.002,352.998 -371.002,352.998l-282.999 0 0 -705.999zm280.999 569.001c127,0 212,-81.0008 212,-215 0,-135.003 -84.0002,-216.004 -212,-216.004l-123.997 0 0 431.003 123.997 0z"/>
+   <glyph unicode="P" horiz-adv-x="628" d="M67.9992 0l157.003 0 0 257 137.998 0c133.999,0 237.999,85.9998 237.999,225.002 0,137.998 -104,223.998 -237.999,223.998l-295.001 0 0 -705.999zm272.001 583.998c59.0009,0 105,-36.9969 105,-101.997 0,-64.9998 -45.9993,-103.001 -105,-103.001l-114.998 0 0 204.997 114.998 0z"/>
+   <glyph unicode="a" horiz-adv-x="595" d="M257 -9.99803c54.0019,0 101.001,18.9963 133.999,49.9985l0 -40.0005 150 0 0 486.001 -150 0 0 -40.0005c-32.9977,30.9981 -79.9968,49.9985 -133.999,49.9985 -133.999,0 -233,-108 -233,-253 0,-144.997 99.0015,-252.996 233,-252.996zm31.0023 137.998c-63.0002,0 -109.004,47.9989 -109.004,114.998 0,67.0036 46.0035,115.002 110.003,115.002 64,0 108,-46.9991 108,-115.002 0,-67.9992 -43.9997,-114.998 -108.999,-114.998z"/>
+   <glyph unicode="e" horiz-adv-x="548" d="M294.001 -11.002c82.0006,0 151,28.0029 198.999,84.0002l-84.0002 84.0002c-28.9985,-33.9975 -67.9992,-49.9985 -115.998,-49.9985 -62.0004,0 -104,30.9981 -120.002,85l347.999 0.999803c5.0032,24.9993 7.00281,42.9999 7.00281,61.0006 0,141.002 -102.001,242.998 -245.002,242.998 -148,0 -260.999,-108.999 -260.999,-254 0,-148 113.999,-254 272.001,-254zm-10.0022 391.003c55.0017,0 89.0034,-27.9987 101.001,-82.0006l-212 -0.999803c15.0012,51.9981 55.0017,83.0004 110.999,83.0004z"/>
+   <glyph unicode="i" horiz-adv-x="260" d="M130.999 553c47.9989,0 82.0006,37.0011 82.0006,84.0002 0,46.9991 -34.0017,84.0002 -82.0006,84.0002 -47.9989,0 -83.0004,-37.0011 -83.0004,-84.0002 0,-46.9991 35.0015,-84.0002 83.0004,-84.0002zm-76.9974 -553l152.999 0 0 486.001 -152.999 0 0 -486.001z"/>
+   <glyph unicode="v" horiz-adv-x="536" d="M207.001 0l123.001 0.999803 205.997 485.001 -161.997 0 -104 -301.999 -104 301.999 -165.001 0 206.001 -486.001z"/>
+   <glyph unicode="z" horiz-adv-x="481" d="M22.9997 0l424 0 0 128 -207.001 0 213 269.001 0 88.9992 -411.998 0 0 -128 194.999 0 -213 -268.002 0 -89.999z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Outfit";font-variant:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .fil1 {fill:#FF3F4B}
+    .fil0 {fill:white}
+    .fnt0 {font-weight:bold;font-size:2390.47px;font-family:'Outfit'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Camada_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2088000323984">
+   <text x="-164.51" y="1711.21"  class="fil0 fnt0">Dev</text>
+   <text x="4124.03" y="1730.34"  class="fil1 fnt0">Pizza</text>
+  </g>
+ </g>
+</svg>
