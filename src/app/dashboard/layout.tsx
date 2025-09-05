@@ -1,3 +1,4 @@
+import { OrderProvider } from "@/providers/order";
 import { Header } from "./components/header";
 
 
@@ -5,7 +6,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     return (
         <>
             <Header />
-            {children}
+            <OrderProvider>
+                {children}
+            </OrderProvider>
         </>
     )
 }
