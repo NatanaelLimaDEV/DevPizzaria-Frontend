@@ -4,9 +4,14 @@ import { X } from 'lucide-react';
 import styles from './styles.module.scss';
 import { use } from 'react'
 import { OrderContext } from '@/providers/order';
+import { calculateTotal } from '@/lib/helper';
 
 export function ModalOrder() {
-    const { onRequestClose, order } = use(OrderContext)
+    const { onRequestClose, order, finishOrder } = use(OrderContext)
+
+    async function handleFinishOrder() {
+        await finishOrder(order[0].order_id)
+    }
 
     return (
         <dialog className={styles.dialogContainer}>
@@ -30,12 +35,14 @@ export function ModalOrder() {
 
                     {order.map(item => (
                         <section className={styles.item} key={item.id}>
-                            <span>{item.amount} - <b>{item.product.name}</b></span>
+                            <span>Qtd: {item.amount} - <b>{item.product.name}</b> - R$ {parseFloat(item.product.price) * item.amount}</span>
                             <span className={styles.description}>{item.product.description}</span>
                         </section>
                     ))}
 
-                    <button className={styles.buttonOrder}>Concluir pedido</button>
+                    <h3 className={styles.total}>Valor total: R$ {calculateTotal(order)}</h3>
+
+                    <button className={styles.buttonOrder} onClick={handleFinishOrder}>Concluir pedido</button>
                 </article>
             </section>
         </dialog>
