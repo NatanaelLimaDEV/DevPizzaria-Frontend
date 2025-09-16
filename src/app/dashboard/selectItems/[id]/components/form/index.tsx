@@ -121,7 +121,7 @@ export function Form({ categories, items }: Props) {
                     </section>
                 ))}
 
-                <Button name="Cadastrar pedido" />
+                <Button name="Confirmar pedido" />
             </form>
         </>
     )

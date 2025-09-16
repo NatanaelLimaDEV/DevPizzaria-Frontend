@@ -36,8 +36,19 @@
 }
 
 .dialogBack {
-    background-color: transparent;
+    background-color: var(--red-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     border: 0;
+
+    &:hover {
+        scale: 1.1;
+    }
 }
 
 .item {
@@ -52,12 +63,45 @@
     margin-top: 4px;
 }
 
+.orderButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
 .buttonOrder {
     background-color: var(--green-900);
     padding: 8px;
     border-radius: 4px;
     border: 0;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    &:hover {
+        scale: 1.1;
+    }
+}
+
+.buttonOrderEdit {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 4px;
+    border: 0;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    &:hover {
+        scale: 1.1;
+    }
 }
 
 .name {
