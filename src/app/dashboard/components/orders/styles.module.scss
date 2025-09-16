@@ -14,15 +14,36 @@
 
 .containerHeader {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 16px;
     margin-top: 24px;
     gap: 14px;
+
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+    }
 
     button {
         background: transparent;
         border: 0;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 18px;
+        color: var(--green-900);
+        font-weight: bold;
+        transition: all .3s;
+
+        &:hover {
+            filter: brightness(1.40);
+        }
     }
 }
 
@@ -57,4 +78,10 @@
 
 .emptyItem {
     color: var(--gray-100);
+}
+
+@media (max-width: 620px) {
+    .nameButtonAdd {
+        display: none;
+    }
 }

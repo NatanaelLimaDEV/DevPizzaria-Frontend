@@ -1,7 +1,7 @@
 "use client"
 
 import { use } from 'react'
-import { RefreshCw } from 'lucide-react';
+import { PlusCircle, RefreshCw } from 'lucide-react';
 import styles from './styles.module.scss';
 import { OrderProps } from '@/lib/order.type';
 import { ModalOrder } from '../modal';
@@ -26,14 +26,27 @@ export function Orders({ orders }: Props) {
         toast.success('Pedidos atualizados!')
     }
 
+    function handleAddOrder() {
+        router.push('/dashboard/newOrder')
+    }
+
     return (
         <>
             <main className={styles.container}>
                 <section className={styles.containerHeader}>
-                    <h1>Últimos pedidos</h1>
-                    <button onClick={handleRefresh}>
-                        <RefreshCw size={24} color='#3fffa3' />
-                    </button>
+                    <div>
+                        <h1>Últimos pedidos</h1>
+                        <button onClick={handleRefresh}>
+                            <RefreshCw size={24} color='#3fffa3' />
+                        </button>
+                    </div>
+                    <div>
+                        <button onClick={handleAddOrder}>
+                            <span className={styles.nameButtonAdd}>
+                            Novo pedido</span>
+                            <PlusCircle size={24} color='#3fffa3' />
+                        </button>
+                    </div>
                 </section>
 
                 <section className={styles.listOrders}>
