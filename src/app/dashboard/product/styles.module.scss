@@ -1,0 +1,41 @@
+.container {
+    max-width: 720px;
+    margin: 20px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--white);
+
+    div {
+        margin: 8px;
+    }
+
+    hr {
+        border: 1px solid var(--gray-100);
+        width: 100%;
+        opacity: .3;
+    }
+
+    p {
+        color: var(--gray-100);
+        font-size: 14px;
+        margin-top: 10px;
+        margin-left: 16px;
+    }
+}
+
+.containerProduct {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    p {
+        color: var(--gray-100);
+        font-size: 14px;
+    }
+
+    h3 {
+        color: var(--off-white);
+    }
+}

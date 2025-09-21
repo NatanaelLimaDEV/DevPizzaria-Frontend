@@ -8,7 +8,8 @@ import { Button } from '@/app/dashboard/components/button'
 import { getCookieClient } from '@/lib/cookieClient'
 import { api } from '@/services/api'
 import { toast } from 'sonner'
-import { useRouter } from 'next/navigation'
+import { redirect } from 'next/navigation'
+import { ProductProps } from '@/lib/product.type'
 
 interface CategoryProps {
     id: string;
@@ -17,14 +18,15 @@ interface CategoryProps {
 
 interface Props {
     categories: CategoryProps[]
+    products: ProductProps[]
 }
 
-export function Form({ categories }: Props) {
-    const router = useRouter();
+export function Form({ categories, products }: Props) {
     const [image, setImage] = useState<File>()
     const [previewImage, setPreviewImage] = useState("")
 
     async function handleRegisterProduct(formData: FormData) {
+
         const categoryIndex = formData.get("category")
         const name = formData.get("name")
         const price = formData.get("price")
@@ -32,6 +34,14 @@ export function Form({ categories }: Props) {
 
         if(!name || !categoryIndex || !price || !description || !image) {
             toast.warning("Preencha todos os campos")
+            return
+        }
+
+        // Verificar se o produto já existe
+        const productExists = products.find(product => product.name === name)
+
+        if(productExists) {
+            toast.warning("Produto ja cadastrado, por favor escolha outro nome")
             return
         }
 
@@ -57,7 +67,7 @@ export function Form({ categories }: Props) {
         })
 
         toast.success("Produto cadastrado com sucesso!")
-        router.push("/dashboard")
+        redirect("/dashboard/product")
     }
 
     function handleFile(e: ChangeEvent<HTMLInputElement>) {

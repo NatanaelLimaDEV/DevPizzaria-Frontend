@@ -138,7 +138,7 @@ export function Form({ categories, products, itemsOrder }: Props) {
                         <h2>{category.name}</h2>
 
                         {products.filter(product => product.category_id === category.id).length === 0 && (
-                            <span className={styles.emptyproduct}>Nenhum producto cadastrado</span>
+                            <span className={styles.emptyproduct}>Nenhum produto cadastrado</span>
                         )}
 
                         {products.filter(product => product.category_id === category.id).map((product) => (

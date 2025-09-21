@@ -1,46 +1,37 @@
 import { api } from '@/services/api'
-import { Button } from '../components/button'
 import styles from './styles.module.scss'
 import { getCookieServer } from '@/lib/cookieServer'
-import { redirect } from 'next/navigation'
+import { Form } from './components/form'
 
-export default function Category() {
+async function getCategories() {
+    const token = await getCookieServer()
 
-    async function handleRegisterCategory(formData: FormData) {
-        "use server"
-        
-        const name = formData.get("name")
-
-        if(name === "") return
-
-        const data = {
-            name: name,
+    const response = await api.get("/category", {
+        headers: {
+            Authorization: `Bearer ${token}`
         }
+    })
 
-        const token = await getCookieServer()
+    return response.data
+}
 
-        await api.post("/category", data, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-        .catch((err) => {
-            console.log(err)
-            return
-        })
-
-        redirect('/dashboard')
-    }
+export default async function Category() {
+    const categories = await getCategories()
 
     return (
         <main className={styles.container}>
-            <h1>Nova Categoria</h1>
 
-            <form className={styles.form} action={handleRegisterCategory}>
-                <input type="text" name='name' placeholder='Nome da categoria, ex: Pizza' required className={styles.input} />
-
-                <Button name='Cadastrar' />
-            </form>
+            <Form categories={categories} />
+            
+            <section className={styles.categories}>
+                <h2>Categorias cadastradas</h2>
+                <hr />
+                <ul>
+                    {categories.map((category: any) => (
+                        <li key={category.id}>{category.name}</li>
+                    ))}
+                </ul>
+            </section>
         </main>
     )
 }
