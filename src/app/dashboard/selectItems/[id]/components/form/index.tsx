@@ -138,15 +138,20 @@ export function Form({ categories, products, itemsOrder }: Props) {
                         <h2>{category.name}</h2>
 
                         {products.filter(product => product.category_id === category.id).length === 0 && (
-                            <span className={styles.emptyproduct}>Nenhum produto cadastrado</span>
+                            <div className={styles.product}><span className={styles.emptyproduct}>Nenhum produto cadastrado</span></div>
                         )}
 
                         {products.filter(product => product.category_id === category.id).map((product) => (
                             <div key={product.id} className={styles.product}>
-                                <div>
-                                    <img src={`http://localhost:3333/files/${product.banner}`} alt={product.name} />
-                                    <span>{product.name}</span>
-                                    <span>R$ {product.price}</span>
+                                <div className={styles.productInfo}>
+                                    <img src={product.banner} alt={product.name} />
+                                    <div className={styles.productInfoText}>
+                                        <h3>{product.name}</h3>
+                                        <div>
+                                            <span>{product.description}</span>
+                                            <span>R$ {product.price}</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className={styles.amountContainer}>
                                     <button type="button" className={styles.buttonMinus} onClick={() => handleDecrease(product.id)}>

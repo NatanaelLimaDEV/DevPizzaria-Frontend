@@ -5,18 +5,11 @@
     flex-direction: column;
     margin: 16px 0;
     gap: 10px;
-
-    img {
-        width: 54px;
-        height: 54px;
-        border-radius: 8px;
-        object-fit: cover;
-    }
-
+    
     h2 {
         color: var(--gray-100);
     }
-
+    
     span {
         color: var(--white);
     }
@@ -29,17 +22,48 @@
     justify-content: space-between;
     gap: 20px;
     background-color: var(--dark-900);
-    padding: 8px 16px;
+    padding: 8px;
     border-radius: 8px;
-    border: 1px solid var(--gray-100);
     width: 100%;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    
+    img {
+        width: 54px;
+        height: 54px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+}
+
+.productInfoText {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h3 {
+        color: var(--white);
+    }
+
+    span {
+        color: var(--gray-100);
+    }
 
     div {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        gap: 14px;
+        gap: 8px;
     }
+}
+
+.amountContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
 }
 
 .inputAmount {

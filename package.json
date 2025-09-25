@@ -12,6 +12,7 @@
     "cookies-next": "^6.1.0",
     "lucide-react": "^0.542.0",
     "next": "15.5.2",
+    "next-cloudinary": "^6.16.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "sass": "^1.91.0",

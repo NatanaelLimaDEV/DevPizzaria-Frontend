@@ -42,12 +42,30 @@
         display: flex;
         flex-direction: column;
         gap: 6px;
-        margin-left: 16px;
     }
 
     hr {
         border: 1px solid var(--gray-100);
         width: 100%;
         opacity: .3;
+    }
+
+    li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--dark-900);
+        padding: 8px;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: transparent;
+        border: 0;
+        color: var(--red-900);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

@@ -23,15 +23,6 @@ export default async function Category() {
 
             <Form categories={categories} />
             
-            <section className={styles.categories}>
-                <h2>Categorias cadastradas</h2>
-                <hr />
-                <ul>
-                    {categories.map((category: any) => (
-                        <li key={category.id}>{category.name}</li>
-                    ))}
-                </ul>
-            </section>
         </main>
     )
 }
