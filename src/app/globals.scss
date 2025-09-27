@@ -36,6 +36,18 @@ body, input, textarea, select, button {
     font: 400, 1rem sans-serif; // 1rem = 16px
 }
 
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 @media (max-width: 720px) {
     html {
         font-size: 87.5%; // 14px

@@ -2,7 +2,7 @@
 
 import { UploadCloud, X } from 'lucide-react'
 import styles from './styles.module.scss'
-import { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import Image from 'next/image'
 import { Button } from '@/app/dashboard/components/button'
 import { getCookieClient } from '@/lib/cookieClient'
@@ -45,15 +45,24 @@ export function Form({ categories, products }: Props) {
 
     const router = useRouter()
 
-    async function handleRegisterProduct(formData: FormData) {
+    async function handleRegisterProduct(e: React.FormEvent<HTMLFormElement>) {
+
+        const formData = new FormData(e.currentTarget)
 
         const categoryIndex = formData.get("category")
         const name = formData.get("name")
         const price = formData.get("price")
         const description = formData.get("description")
 
-        if (!name || !categoryIndex || !price || !description || !image) {
+        if (!name || !categoryIndex || !price || !description) {
+            e.preventDefault()
             toast.warning("Preencha todos os campos")
+            return
+        }
+
+        if (!image) {
+            e.preventDefault()
+            toast.warning("Selecione uma imagem")
             return
         }
 
@@ -61,6 +70,7 @@ export function Form({ categories, products }: Props) {
         const productExists = products.find(product => product.name === name)
 
         if (productExists) {
+            e.preventDefault()
             toast.warning("Produto ja cadastrado, por favor escolha outro nome")
             return
         }
@@ -87,7 +97,7 @@ export function Form({ categories, products }: Props) {
             })
 
         toast.success("Produto cadastrado com sucesso!")
-        redirect("/dashboard/product")
+        router.refresh()
     }
 
     function handleFile(e: ChangeEvent<HTMLInputElement>) {
@@ -138,13 +148,13 @@ export function Form({ categories, products }: Props) {
         <main className={styles.container}>
             <h1>Novo produto</h1>
 
-            <form className={styles.form} action={handleRegisterProduct}>
+            <form className={styles.form} onSubmit={handleRegisterProduct}>
                 <label className={styles.labelImage}>
                     <span>
                         <UploadCloud size={30} color='#fff' />
                     </span>
 
-                    <input type="file" accept="image/png, image/jpeg" required onChange={handleFile} />
+                    <input type="file" accept="image/png, image/jpeg" onChange={handleFile} />
 
                     {previewImage && (
                         <Image
@@ -168,7 +178,8 @@ export function Form({ categories, products }: Props) {
 
                 <input type="text" name='name' placeholder='Digite o nome do produto...' required className={styles.input} />
 
-                <input type="text" name='price' placeholder='Preço do produto...' required className={styles.input} />
+                <input type="number" name='price' placeholder='Preço do produto... EX: 10.99' 
+                step="0.01" min="0" required className={styles.input} />
 
                 <textarea className={styles.input} placeholder='Digite a descricao do produto...' required name="description"></textarea>
 

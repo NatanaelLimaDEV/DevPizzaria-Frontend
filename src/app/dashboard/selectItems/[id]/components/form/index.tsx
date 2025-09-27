@@ -71,6 +71,10 @@ export function Form({ categories, products, itemsOrder }: Props) {
             amount: amounts[product.id] || 0
         }))
 
+        if (data.length === 0 || data.every(item => item.amount === 0)) {
+            toast.warning("Selecione pelo menos um produto")
+            return
+        }
 
         const token = getCookieClient()
 
